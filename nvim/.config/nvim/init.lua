@@ -533,15 +533,10 @@ require('lazy').setup({
           flags = lsp_flags,
           settings = {},
         },
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
+        marksman = {
+          capabilities = capabilities,
+          flags = lsp_flags,
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -750,19 +745,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'projekt0n/github-nvim-theme',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1001, -- make sure to load this before all the other start plugins
-    config = function()
-      -- Load the colorscheme here
-      vim.cmd.colorscheme 'github_dark_high_contrast'
-
-      -- You can configure highlights by doing something like
-      vim.cmd.hi 'Comment gui=none'
-    end,
-  },
-
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -829,50 +811,6 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
-  {
-    'christoomey/vim-tmux-navigator',
-    lazy = false,
-
-    cmd = {
-      'TmuxNavigateLeft',
-      'TmuxNavigateDown',
-      'TmuxNavigateUp',
-      'TmuxNavigateRight',
-      'TmuxNavigatePrevious',
-    },
-
-    keys = {
-      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
-      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
-      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
-      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
-      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
-    },
-  },
-
-  { -- edit the file system as a buffer
-    'stevearc/oil.nvim',
-    opts = {
-      keymaps = {
-        ['<C-s>'] = false,
-        ['<C-h>'] = false,
-        ['<C-l>'] = false,
-      },
-      view_options = {
-        show_hidden = true,
-      },
-    },
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    keys = {
-      { '-', ':Oil<cr>', desc = 'oil' },
-      { '<leader>ef', ':Oil<cr>', desc = 'edit [f]iles' },
-      config = function()
-        require('oil').setup {}
-      end,
-    },
-    cmd = 'Oil',
-  },
-
   -- disables hungry features for files larget than 2MB
   { 'LunarVim/bigfile.nvim' },
 
@@ -886,8 +824,6 @@ require('lazy').setup({
     branch = 'master',
     config = true,
   },
-
-  { 'ggandor/leap.nvim' },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -910,7 +846,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
