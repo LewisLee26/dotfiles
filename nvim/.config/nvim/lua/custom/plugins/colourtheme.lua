@@ -1,5 +1,13 @@
 return {
   {
+    'xiyaowong/transparent.nvim',
+    lazy = false,
+    extra_groups = {
+      'Normal',
+      'NonText',
+    },
+  },
+  {
     'projekt0n/github-nvim-theme',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1001, -- make sure to load this before all the other start plugins
