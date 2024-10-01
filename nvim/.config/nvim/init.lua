@@ -124,14 +124,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.keymap.set('i', '<C-c>', function()
-  vim.ui.input({ prompt = 'Calculator: ' }, function(input)
-    local calc = load('return ' .. (input or ''))()
-    if calc then
-      vim.api.nvim_feedkeys(tostring(calc), 'i', true)
-    end
-  end)
-end)
+-- vim.keymap.set('i', '<C-c>', function()
+--   vim.ui.input({ prompt = 'Calculator: ' }, function(input)
+--     local calc = load('return ' .. (input or ''))()
+--     if calc then
+--       vim.api.nvim_feedkeys(tostring(calc), 'i', true)
+--     end
+--   end)
+-- end)
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -763,3 +763,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+require 'custom.scripts.init'
