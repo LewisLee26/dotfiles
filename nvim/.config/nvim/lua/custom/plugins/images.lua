@@ -2,6 +2,7 @@ return {
   {
     -- see the image.nvim readme for more information about configuring this plugin
     '3rd/image.nvim',
+    enabled = false,
     opts = {
       backend = 'kitty', -- whatever backend you would like to use
       max_width = 100,
