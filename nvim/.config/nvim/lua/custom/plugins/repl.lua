@@ -4,85 +4,45 @@ return {
     version = '^1.0.0', -- use version <2.0.0 to avoid breaking changes
     dependencies = { '3rd/image.nvim' },
     build = ':UpdateRemotePlugins',
-    init = function()
-      -- these are examples, not defaults. Please see the readme
-      -- vim.g.molten_image_provider = 'image.nvim'
-      vim.g.molten_image_provider = 'wezterm'
-      vim.g.molten_output_win_max_height = 20
-    end,
-    config = function()
-      vim.keymap.set('n', '<leader>mi', ':MoltenInit<CR>', { silent = true, desc = 'Initialize the plugin' })
-      vim.keymap.set('n', '<leader>e', ':MoltenEvaluateOperator<CR>', { silent = true, desc = 'run operator selection' })
-      vim.keymap.set('n', '<leader>rl', ':MoltenEvaluateLine<CR>', { silent = true, desc = 'evaluate line' })
-      vim.keymap.set('n', '<leader>rr', ':MoltenReevaluateCell<CR>', { silent = true, desc = 're-evaluate cell' })
-      vim.keymap.set('v', '<leader>r', ':<C-u>MoltenEvaluateVisual<CR>gv', { silent = true, desc = 'evaluate visual selection' })
-      vim.keymap.set('n', '<leader>rd', ':MoltenDelete<CR>', { silent = true, desc = 'molten delete cell' })
-      vim.keymap.set('n', '<leader>oh', ':MoltenHideOutput<CR>', { silent = true, desc = 'hide output' })
-      vim.keymap.set('n', '<leader>os', ':noautocmd MoltenEnterOutput<CR>', { silent = true, desc = 'show/enter output' })
-    end,
-  },
-
-  {
-    'GCBallesteros/jupytext.nvim',
-    config = true,
-    style = 'hydrogen',
-    custom_language_formatting = {
-      python = {
-        extension = 'md',
-        style = 'markdown',
-        force_ft = 'markdown',
-      },
-    },
-  },
-
-  {
-
-    'quarto-dev/quarto-nvim',
     ft = { 'quarto', 'markdown' },
-    config = function()
-      local runner = require 'quarto.runner'
-
-      -- Set up key mappings for quarto.runner
-      vim.keymap.set('n', '<leader>rc', runner.run_cell, { desc = 'run cell', silent = true })
-      vim.keymap.set('n', '<leader>ra', runner.run_above, { desc = 'run cell and above', silent = true })
-      vim.keymap.set('n', '<leader>rA', runner.run_all, { desc = 'run all cells', silent = true })
-      -- vim.keymap.set("n", "<leader>rl", runner.run_line, { desc = "run line", silent = true })
-      vim.keymap.set('v', '<leader>r', runner.run_range, { desc = 'run visual range', silent = true })
-      vim.keymap.set('n', '<leader>RA', function()
-        runner.run_all(true)
-      end, { desc = 'run all cells of all languages', silent = true })
-    end,
-    lazy = false,
-  },
-
-  {
-    'jpalardy/vim-slime',
     init = function()
-      -- these two should be set before the plugin loads
-      vim.g.slime_target = 'neovim'
-      vim.g.slime_no_mappings = true
-    end,
-    config = function()
-      vim.g.slime_input_pid = false
-      vim.g.slime_suggest_default = true
-      vim.g.slime_menu_config = false
-      vim.g.slime_neovim_ignore_unlisted = false
-      -- options not set here are g:slime_neovim_menu_order, g:slime_neovim_menu_delimiter, and g:slime_get_jobid
-      -- see the documentation above to learn about those options
+      vim.g.molten_image_provider = 'image.nvim'
+      vim.g.molten_output_win_max_height = 20
+      vim.keymap.set('n', '<localleader>mi', ':MoltenInit<CR>', { desc = 'Initialize Molten', silent = true })
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MoltenInitPost',
+        callback = function()
+          -- quarto code runner mappings
+          local r = require 'quarto.runner'
+          vim.keymap.set('n', '<localleader>rc', r.run_cell, { desc = 'run cell', silent = true })
+          vim.keymap.set('n', '<localleader>ra', r.run_above, { desc = 'run cell and above', silent = true })
+          vim.keymap.set('n', '<localleader>rb', r.run_below, { desc = 'run cell and below', silent = true })
+          vim.keymap.set('n', '<localleader>rl', r.run_line, { desc = 'run line', silent = true })
+          vim.keymap.set('n', '<localleader>rA', r.run_all, { desc = 'run all cells', silent = true })
+          vim.keymap.set('n', '<localleader>RA', function()
+            r.run_all(true)
+          end, { desc = 'run all cells of all languages', silent = true })
 
-      -- called MotionSend but works with textobjects as well
-      vim.keymap.set('n', 'gz', '<Plug>SlimeMotionSend', { remap = true, silent = false })
-      vim.keymap.set('n', 'gzz', '<Plug>SlimeLineSend', { remap = true, silent = false })
-      vim.keymap.set('x', 'gz', '<Plug>SlimeRegionSend', { remap = true, silent = false })
-      vim.keymap.set('n', 'gzc', '<Plug>SlimeConfig', { remap = true, silent = false })
-    end,
-  },
+          -- setup some molten specific keybindings
+          vim.keymap.set('n', '<localleader>e', ':MoltenEvaluateOperator<CR>', { desc = 'evaluate operator', silent = true })
+          vim.keymap.set('n', '<localleader>rr', ':MoltenReevaluateCell<CR>', { desc = 're-eval cell', silent = true })
+          vim.keymap.set('v', '<localleader>r', ':<C-u>MoltenEvaluateVisual<CR>gv', { desc = 'execute visual selection', silent = true })
+          vim.keymap.set('n', '<localleader>os', ':noautocmd MoltenEnterOutput<CR>', { desc = 'open output window', silent = true })
+          vim.keymap.set('n', '<localleader>oh', ':MoltenHideOutput<CR>', { desc = 'close output window', silent = true })
+          vim.keymap.set('n', '<localleader>md', ':MoltenDelete<CR>', { desc = 'delete Molten cell', silent = true })
+          local open = false
+          vim.keymap.set('n', '<localleader>ot', function()
+            open = not open
+            vim.fn.MoltenUpdateOption('auto_open_output', open)
+          end)
 
-  {
-    'jmbuhr/otter.nvim',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-    opts = {},
+          -- if we're in a python file, change the configuration a little
+          if vim.bo.filetype == 'python' then
+            vim.fn.MoltenUpdateOption('molten_virt_lines_off_by_1', false)
+            vim.fn.MoltenUpdateOption('molten_virt_text_output', false)
+          end
+        end,
+      })
+    end,
   },
 }
