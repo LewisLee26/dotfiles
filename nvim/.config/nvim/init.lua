@@ -309,6 +309,11 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
+      -- Check if running in VSCode
+      if vim.g.vscode then
+        -- Disable LSP in VSCode Neovim
+        return
+      end
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
