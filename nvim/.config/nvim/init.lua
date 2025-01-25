@@ -12,10 +12,7 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -418,7 +415,6 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
         pyright = {
           capabilities = capabilities,
           flags = lsp_flags,
@@ -443,6 +439,16 @@ require('lazy').setup({
               -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
+        },
+
+        clangd = {
+          capabilities = capabilities,
+          flags = lsp_flags,
+        },
+
+        rust_analyzer = {
+          capabilities = capabilities,
+          flags = lsp_flags,
         },
       }
 

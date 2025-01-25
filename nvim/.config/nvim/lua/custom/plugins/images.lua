@@ -36,4 +36,15 @@ return {
   --     }
   --   end,
   -- },
+  {
+    'norcalli/nvim-colorizer.lua',
+    DEFAULT_OPTIONS = {
+      names = false,
+    },
+    config = function()
+      require('colorizer').setup {
+        '*',
+      }
+    end,
+  },
 }
