@@ -36,10 +36,18 @@ return {
     keys = {
       { '-', ':Oil<cr>', desc = 'oil' },
       { '<leader>ef', ':Oil<cr>', desc = 'edit [f]iles' },
-      config = function()
-        require('oil').setup {}
-      end,
     },
+    config = function()
+      require('oil').setup {
+        default_file_explorer = true,
+        columns = {
+          'icon',
+          'permissions',
+          'size',
+          'mtime',
+        },
+      }
+    end,
     cmd = 'Oil',
   },
 
