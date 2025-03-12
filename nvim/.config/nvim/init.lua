@@ -358,6 +358,10 @@ require('lazy').setup({
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+          map('<leader>tp', ':TypstPreview<CR>', '[T]ypst [P]review')
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
@@ -449,6 +453,16 @@ require('lazy').setup({
         rust_analyzer = {
           capabilities = capabilities,
           flags = lsp_flags,
+        },
+
+        tinymist = {
+          capabilities = capabilities,
+          flags = lsp_flags,
+          settings = {
+            exportPdf = 'never',
+            semanticTokens = 'disable',
+            formatterMode = 'typstyle',
+          },
         },
       }
 
