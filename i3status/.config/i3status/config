@@ -8,16 +8,18 @@
 
 general {
         colors = true
-        color_good = "#A3BE8C"
-        color_degraded = "#D8DEE9"
-        color_bad = "#BF616A"
+        # color_good = "#A3BE8C"
+        color_good = "#71B7FF"
+        # color_degraded = "#D8DEE9"
+        color_degraded = "#FBD669"
+        # color_bad = "#BF616A"
+        color_bad = "#FF6A69"
         interval = 5
 }
 
-order += "ipv6"
-#order += "wireless _first_"
+order += "wireless _first_"
 order += "ethernet _first_"
-#order += "battery all"
+# order += "battery all"
 order += "disk /"
 order += "load"
 order += "memory"
