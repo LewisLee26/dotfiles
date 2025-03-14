@@ -15,7 +15,7 @@ set $wm_setting_key_up               k
 set $wm_setting_key_right            l
 
 set $wm_setting_app_terminal         kitty
-set $wm_setting_app_browser          firefox
+set $wm_setting_app_browser          zen-browser
 set $wm_setting_app_launcher         i3-dmenu-desktop
 set $wm_setting_app_compositor       picom
 
@@ -27,7 +27,7 @@ set $wm_color_background             #2E3440
 
 set $bar_setting_position            bottom
 set $bar_setting_mode                dock
-set $bar_setting_font                pango:Source Sans Pro, Semibold 11
+set $bar_setting_font                pango:JetBrainsMono Nerd Font Mono, Semibold 11
 set $bar_setting_separator           " - "
 set $bar_setting_statusCommand       i3status
 set $bar_setting_trayoutput          full
