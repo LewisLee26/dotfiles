@@ -1,5 +1,4 @@
 # My Dotfiles
-
 This is all my dotfiles.
 
 ## Neovim
@@ -24,15 +23,15 @@ This is all my dotfiles.
 - [Picom GitHub](https://github.com/yshui/picom)
 
 ### Rofi 
-[Rofi GitHub](https://github.com/davatorium/rofi)
+- [Rofi GitHub](https://github.com/davatorium/rofi)
 
 ## Fish
-[Fish Website](https://fishshell.com/)
-[Fish GitHub](https://github.com/fish-shell/fish-shell)
+- [Fish Website](https://fishshell.com/)
+- [Fish GitHub](https://github.com/fish-shell/fish-shell)
 
 ## Wezterm 
-[Wezterm Website](https://wezterm.org/index.html)
-[Wezterm GitHub](https://github.com/wezterm/wezterm)
+- [Wezterm Website](https://wezterm.org/index.html)
+- [Wezterm GitHub](https://github.com/wezterm/wezterm)
 
 ## Zsh
-[Zsh GitHub](https://github.com/zsh-users/zsh)
+- [Zsh GitHub](https://github.com/zsh-users/zsh)
