@@ -133,6 +133,27 @@ local function split_nav(resize_or_move, key)
 	}
 end
 
+function tab_title(tab_info)
+	local title = tab_info.tab_title
+	-- if the tab title is explicitly set, take that
+	if title and #title > 0 then
+		return " " + title + " "
+	end
+	-- Otherwise, use the title from the active pane
+	-- in that tab
+	return " " + tab_info.active_pane.title + " "
+end
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local title = tab_title(tab)
+	if tab.is_active then
+		return {
+			{ Text = " " .. title .. " " },
+		}
+	end
+	return title
+end)
+
 -- Define keybindings
 config.keys = {
 	-- Splitting panes
@@ -237,7 +258,7 @@ config.keys = {
 			description = "Enter new tab title",
 			action = wezterm.action_callback(function(window, _, line)
 				if line then
-					window:perform_action(wezterm.action.SetTabTitle(line), window:active_pane())
+					window:active_tab():set_title(line)
 				end
 			end),
 		}),
