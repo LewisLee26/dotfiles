@@ -18,4 +18,5 @@ unset __conda_setup
 
 alias vi=nvim
 alias cat=bat
-alias ls=exa
+alias ls=eza
+eval "$(zoxide init zsh)"
