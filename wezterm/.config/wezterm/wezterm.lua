@@ -306,6 +306,16 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
+	{
+		key = "+",
+		mods = "LEADER",
+		action = wezterm.action.IncreaseFontSize,
+	},
+	{
+		key = "-",
+		mods = "LEADER",
+		action = wezterm.action.DecreaseFontSize,
+	},
 }
 
 -- Quick tab movement
