@@ -12,6 +12,8 @@ config.disable_default_key_bindings = true
 
 config.term = "xterm-256color"
 
+config.max_fps = 120
+
 -- -- Colorscheme
 config.colors = {
 	foreground = "#f0f3f6", -- fg.default
@@ -52,7 +54,7 @@ config.colors = {
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.font_size = 11.0
 config.enable_kitty_graphics = true
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.status_update_interval = 1000
