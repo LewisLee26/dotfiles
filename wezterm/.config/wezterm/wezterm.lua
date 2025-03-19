@@ -10,6 +10,8 @@ end
 
 config.disable_default_key_bindings = true
 
+config.term = "xterm-256color"
+
 -- -- Colorscheme
 config.colors = {
 	foreground = "#f0f3f6", -- fg.default
@@ -47,9 +49,9 @@ config.colors = {
 	},
 }
 
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.font_size = 11.0
-config.enable_kitty_graphics = false
+config.enable_kitty_graphics = true
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
@@ -59,8 +61,8 @@ config.tab_bar_at_bottom = false
 
 -- Panes
 config.inactive_pane_hsb = {
-	saturation = 0.8,
-	brightness = 0.6,
+	saturation = 0.9,
+	brightness = 0.7,
 }
 
 wezterm.on("update-right-status", function(window, pane)
@@ -142,12 +144,12 @@ config.keys = {
 		key = "=",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
-	-- Maximizing a pane
-	{
-		mods = "LEADER",
-		key = "m",
-		action = wezterm.action.TogglePaneZoomState,
-	},
+	-- -- Maximizing a pane
+	-- {
+	-- 	mods = "LEADER",
+	-- 	key = "m",
+	-- 	action = wezterm.action.TogglePaneZoomState,
+	-- },
 	-- Rotating panes
 	{
 		mods = "LEADER",
@@ -174,16 +176,17 @@ config.keys = {
 		action = wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 	},
 
-	-- -- Move between split panes
-	-- split_nav("move", "h"),
-	-- split_nav("move", "j"),
-	-- split_nav("move", "k"),
-	-- split_nav("move", "l"),
-	-- -- Resize panes
-	-- split_nav("resize", "h"),
-	-- split_nav("resize", "j"),
-	-- split_nav("resize", "k"),
-	-- split_nav("resize", "l"),
+	-- Move between split panes
+	split_nav("move", "h"),
+	split_nav("move", "j"),
+	split_nav("move", "k"),
+	split_nav("move", "l"),
+
+	-- Resize panes
+	split_nav("resize", "h"),
+	split_nav("resize", "j"),
+	split_nav("resize", "k"),
+	split_nav("resize", "l"),
 	-- Existing keybindings
 	{
 		key = "f",
@@ -220,8 +223,10 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
-	{ mods = "LEADER", key = "h", action = wezterm.action.ActivateTabRelative(-1) },
-	{ mods = "LEADER", key = "l", action = wezterm.action.ActivateTabRelative(1) },
+	{ mods = "ALT", key = "h", action = wezterm.action.ActivateTabRelative(-1) },
+
+	{ mods = "ALT", key = "l", action = wezterm.action.ActivateTabRelative(1) },
+
 	-- Rename tab
 	{
 		key = ",",
@@ -284,9 +289,20 @@ config.keys = {
 	},
 
 	{
-		key = "Insert",
-		mods = "SHIFT",
+		key = "p",
+		mods = "LEADER",
 		action = wezterm.action({ PasteFrom = "Clipboard" }),
+	},
+
+	{
+		key = "y",
+		mods = "LEADER",
+		action = wezterm.action({ CopyTo = "Clipboard" }),
+	},
+	{
+		key = "c",
+		mods = "LEADER",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 }
 
