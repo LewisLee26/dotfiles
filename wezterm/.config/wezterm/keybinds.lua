@@ -130,7 +130,7 @@ function M.apply(config)
 		{
 			key = "n",
 			mods = "LEADER",
-			action = act("CurrentPaneDomain"),
+			action = act.SpawnTab("CurrentPaneDomain"),
 		},
 		{
 			key = "h",
