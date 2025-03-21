@@ -180,7 +180,7 @@ function M.apply(config)
 				action = wezterm.action_callback(function(window, pane, line)
 					if line then
 						window:perform_action(
-							wezterm.action.SwitchToWorkspace({
+							act.SwitchToWorkspace({
 								name = line,
 							}),
 							pane
@@ -230,24 +230,24 @@ function M.apply(config)
 		table.insert(config.keys, {
 			key = tostring(i),
 			mods = "LEADER",
-			action = wezterm.action.ActivateTab(i - 1),
+			action = act.ActivateTab(i - 1),
 		})
 	end
 
 	config.key_tables = {
 		resize_pane = {
-			{ key = "h", action = wezterm.action.AdjustPaneSize({ "Left", 1 }) },
-			{ key = "j", action = wezterm.action.AdjustPaneSize({ "Down", 1 }) },
-			{ key = "k", action = wezterm.action.AdjustPaneSize({ "Up", 1 }) },
-			{ key = "l", action = wezterm.action.AdjustPaneSize({ "Right", 1 }) },
+			{ key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
+			{ key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
+			{ key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
+			{ key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
 			{ key = "Escape", action = "PopKeyTable" },
 			{ key = "Enter", action = "PopKeyTable" },
 		},
 		move_tab = {
-			{ key = "h", action = wezterm.action.MoveTabRelative(-1) },
-			{ key = "j", action = wezterm.action.MoveTabRelative(-1) },
-			{ key = "k", action = wezterm.action.MoveTabRelative(1) },
-			{ key = "l", action = wezterm.action.MoveTabRelative(1) },
+			{ key = "h", action = act.MoveTabRelative(-1) },
+			{ key = "j", action = act.MoveTabRelative(-1) },
+			{ key = "k", action = act.MoveTabRelative(1) },
+			{ key = "l", action = act.MoveTabRelative(1) },
 			{ key = "Escape", action = "PopKeyTable" },
 			{ key = "Enter", action = "PopKeyTable" },
 		},
