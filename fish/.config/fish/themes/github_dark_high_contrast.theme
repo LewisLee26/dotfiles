@@ -1,0 +1,29 @@
+# name: 'GitHub Dark High Contrast'
+# preferred_background: 303446
+
+fish_color_normal f0f3f6
+fish_color_command 71b7ff
+fish_color_param f0b72f
+fish_color_keyword ff9492
+fish_color_quote cb9eff
+fish_color_redirection f0b72f
+fish_color_end ff9492
+fish_color_comment 7a828e
+fish_color_error ff9492
+fish_color_gray 9ea7b3
+fish_color_selection --background=409eff
+fish_color_search_match --background=409eff
+fish_color_option cb9eff
+fish_color_operator f0b72f
+fish_color_escape ff9492
+fish_color_autosuggestion 7a828e
+fish_color_cancel ff9492
+fish_color_cwd d9dee3
+fish_color_user 39c5cf
+fish_color_host 71b7ff
+fish_color_host_remote a6d189
+fish_color_status ff9492
+fish_pager_color_progress 7a828e
+fish_pager_color_prefix f0b72f
+fish_pager_color_completion f0f3f6
+fish_pager_color_description 7a828e
