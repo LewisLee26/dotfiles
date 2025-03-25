@@ -30,16 +30,30 @@ function M.load()
 			battery = string.format("%.0f%%", b.state_of_charge * 100)
 		end
 
-		window:set_right_status(wezterm.format({
+		local battery = nil -- Initialize as nil
+		local batteries = wezterm.battery_info()
+
+		if #batteries > 0 then -- Only add battery info if a battery exists
+			for _, b in ipairs(batteries) do
+				battery = string.format("%.0f%%", b.state_of_charge * 100)
+			end
+		end
+
+		local status_items = {
 			{ Foreground = { Color = "FFB86C" } },
 			"ResetAttributes",
-			{ Text = wezterm.nerdfonts.oct_table .. " " .. workspace_or_leader },
-			{ Text = " | " },
-			{ Text = " " .. battery .. " " },
-			{ Text = " | " },
-			{ Text = wezterm.nerdfonts.md_clock .. " " .. time },
-			{ Text = " | " },
-		}))
+		}
+
+		table.insert(status_items, { Text = " " .. wezterm.nerdfonts.oct_table .. " " .. workspace_or_leader })
+		table.insert(status_items, { Text = " | " })
+
+		if battery then
+			table.insert(status_items, { Text = " | " .. battery .. " | " })
+		end
+
+		table.insert(status_items, { Text = wezterm.nerdfonts.md_clock .. " " .. time })
+
+		window:set_right_status(wezterm.format(status_items))
 	end)
 
 	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
