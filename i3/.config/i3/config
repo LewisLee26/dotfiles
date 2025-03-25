@@ -27,7 +27,7 @@ set $wm_color_background             #0A0C10
 
 ### Applications ###
 # Start a terminal emulator
-bindsym $mod+Return exec $wm_setting_app_terminal
+bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm
 
 # Start a web browser
 bindsym $mod+$smod+Return exec flatpak run app.zen_browser.zen
@@ -164,6 +164,10 @@ bindsym $mod+$smod+q kill
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$smod+r restart
 bindsym $mod+Shift+c reload
+
+# Change volume
+bindsym $mod+Up exec amixer set Master 5%+
+bindsym $mod+Down exec amixer set Master 5%-
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
