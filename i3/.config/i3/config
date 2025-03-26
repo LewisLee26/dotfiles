@@ -6,8 +6,8 @@
 set $mod                             Mod4
 set $smod                            Shift
 set $wm_setting_font                 pango:JetBrainsMono Nerd Font Mono, Semibold 11
-set $wm_setting_gap_width            15
-set $wm_setting_gap_heigth           15
+set $wm_setting_gap_inner	     10
+set $wm_setting_gap_outer	     10
 set $wm_setting_border_size          2
 set $wm_setting_key_left             h
 set $wm_setting_key_down             j
@@ -122,8 +122,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ### Gaps ###
-gaps horizontal $wm_setting_gap_width
-gaps vertical   $wm_setting_gap_heigth
+gaps inner $wm_setting_gap_inner
 smart_gaps on
 
 ### Borders ###
