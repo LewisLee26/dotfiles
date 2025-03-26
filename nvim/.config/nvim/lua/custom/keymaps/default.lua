@@ -16,4 +16,4 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('x', '<leader>p', [["_dP]])
 
 -- End of previous work
-vim.keymap.set({ 'n', 'v', 'x' }, '<S-e>', 'ge')
+vim.keymap.set({ 'n', 'v', 'x' }, '<C-e>', 'ge')
