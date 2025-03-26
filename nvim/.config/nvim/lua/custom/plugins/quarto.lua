@@ -1,6 +1,7 @@
 return {
   {
     'GCBallesteros/jupytext.nvim',
+    enabled = false,
     config = function()
       require('jupytext').setup {
         custom_language_formatting = {
@@ -16,8 +17,8 @@ return {
   },
 
   {
-
     'quarto-dev/quarto-nvim',
+    enabled = false,
     ft = { 'quarto', 'markdown' },
     dependencies = {
       'nvim-cmp',
@@ -76,6 +77,7 @@ return {
 
   {
     'jpalardy/vim-slime',
+    enabled = false,
     init = function()
       -- these two should be set before the plugin loads
       vim.g.slime_target = 'neovim'
@@ -99,6 +101,7 @@ return {
 
   {
     'jmbuhr/otter.nvim',
+    enabled = false,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
     },
