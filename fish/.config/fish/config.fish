@@ -38,4 +38,6 @@ end
 
 abbr -a -- cat bat
 abbr -a -- ls eza
+
 zoxide init fish | source
+starship init fish | source

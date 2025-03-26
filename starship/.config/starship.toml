@@ -1,0 +1,112 @@
+palette = "github_dark_high_contrast"
+
+# Insert a blank line between shell prompts
+add_newline = true 
+
+# Increase the default command timeout to 2 seconds
+command_timeout = 2000
+
+# Define the order and format of the information in our prompt
+format = """\
+[](fg:blue)\
+$directory\
+${custom.directory_separator_not_git}\
+${custom.directory_separator_git}\
+$symbol($git_branch[](fg:blue))\
+$symbol( $git_commit$git_status$git_metrics$git_state)$fill$cmd_duration$nodejs$all\
+$character"""
+
+# Fill character (empty space) between the left and right prompt
+[fill]
+symbol = " "
+
+# Disable the line break between the first and second prompt lines
+[line_break]
+disabled = true
+
+# Customize the format of the working directory
+[directory]
+truncate_to_repo = true
+format = "[ $path ]($style)"
+style = "fg:foreground bg:#272b33"
+
+[git_branch]
+symbol = " "
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+style = "fg:foreground bg:#272b33"
+
+[git_metrics]
+disabled = false
+
+[nodejs]
+format = "via [$symbol($version )]($style)"
+style = "yellow"
+
+[package]
+disabled = true # Enable to output the current working directory's package version
+format = "[$symbol$version]($style) "
+display_private = true
+
+# Output the command duration if over 2 seconds
+[cmd_duration]
+min_time = 2_000
+format = "[ $duration ]($style)"
+style = "white"
+
+# Customize the battery indicator
+[battery]
+format = "[$symbol $percentage]($style) "
+empty_symbol = "🪫"
+charging_symbol = "🔋"
+full_symbol = '🔋'
+
+[[battery.display]]
+threshold = 10
+style = 'red'
+
+# Output a styled separator right after the directory when inside a git repository.
+[custom.directory_separator_git]
+description = "Output a styled separator right after the directory when inside a git repository."
+command = ""
+format = "[](fg:blue bg:#272b33)"
+# Only when inside git repository
+when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1"
+
+# Output a styled separator right after the directory when NOT inside a git repository.
+[custom.directory_separator_not_git]
+description = "Output a styled separator right after the directory when NOT inside a git repository."
+command = ""
+format = "[](fg:blue)"
+# Only when NOT inside a git repository
+when = "! git rev-parse --is-inside-work-tree > /dev/null 2>&1"
+
+[palettes.github_dark_high_contrast]
+foreground = "#f0f3f6"
+background = "#0a0c10"
+
+cursor_bg = "#f0f3f6"
+cursor_border = "#f0f3f6"
+cursor_fg = "#0a0c10"
+
+selection_bg = "rgba(64,158,255,0.4)"
+selection_fg = "#f0f3f6"
+
+scrollbar_thumb = "#7a828e"
+split = "#7a828e"
+
+black = "#0a0c10"
+red = "#ff9492"
+blue = "#71b7ff"
+yellow = "#f0b72f"
+magenta = "#cb9eff"
+cyan = "#39c5cf"
+white = "#d9dee3"
+
+black_bright = "#9ea7b3"
+red_bright = "#ffb1af"
+green_bright = "#f0f3f6"
+yellow_bright = "#f7c843"
+blue_bright = "#91cbff"
+magenta_bright = "#dbb7ff"
+cyan_bright = "#ffb1af"
+white_bright = "#ffffff"
