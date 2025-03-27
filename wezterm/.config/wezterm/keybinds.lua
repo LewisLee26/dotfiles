@@ -118,6 +118,11 @@ function M.apply(config)
 			action = act.CloseCurrentTab({ confirm = false }),
 		},
 		{
+			key = "q",
+			mods = "LEADER",
+			action = act.QuitApplication,
+		},
+		{
 			key = "m",
 			mods = "LEADER",
 			action = act.ActivateKeyTable({ name = "move_tab", one_shot = false }),
