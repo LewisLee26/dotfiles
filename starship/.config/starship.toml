@@ -10,10 +10,8 @@ command_timeout = 2000
 format = """\
 [](fg:blue)\
 $directory\
-${custom.directory_separator_not_git}\
-${custom.directory_separator_git}\
-$symbol($git_branch[](fg:blue))\
-$symbol( $git_commit$git_status$git_metrics$git_state)$fill$cmd_duration$nodejs$all\
+[](fg:blue)\
+$fill$cmd_duration\
 $character"""
 
 # Fill character (empty space) between the left and right prompt
@@ -26,7 +24,7 @@ disabled = true
 
 # Customize the format of the working directory
 [directory]
-truncate_to_repo = true
+truncate_to_repo = false
 format = "[ $path ]($style)"
 style = "fg:foreground bg:#272b33"
 
