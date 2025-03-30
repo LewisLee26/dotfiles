@@ -48,7 +48,7 @@ function M.load()
 		table.insert(status_items, { Text = " | " })
 
 		if battery then
-			table.insert(status_items, { Text = " | " .. battery .. " | " })
+			table.insert(status_items, { Text = battery .. " | " })
 		end
 
 		table.insert(status_items, { Text = wezterm.nerdfonts.md_clock .. " " .. time })
