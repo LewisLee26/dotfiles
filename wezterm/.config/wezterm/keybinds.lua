@@ -1,5 +1,9 @@
 local wezterm = require("wezterm")
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+workspace_switcher.get_choices = function(opts)
+	-- this will ONLY show the workspace elements, NOT the Zoxide results
+	return workspace_switcher.choices.get_workspace_elements({})
+end
 
 local act = wezterm.action
 
