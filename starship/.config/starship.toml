@@ -11,12 +11,17 @@ format = """\
 [](fg:blue)\
 $directory\
 [](fg:blue)\
+$conda\
 $fill$cmd_duration\
 $character"""
 
 # Fill character (empty space) between the left and right prompt
 [fill]
 symbol = " "
+
+[character]
+success_symbol = '[ ❯](white) '
+error_symbol = '[ ✗](red) '
 
 # Disable the line break between the first and second prompt lines
 [line_break]
@@ -50,6 +55,9 @@ display_private = true
 min_time = 2_000
 format = "[ $duration ]($style)"
 style = "white"
+
+[conda]
+format = ' [$symbol$environment](green) '
 
 # Customize the battery indicator
 [battery]
@@ -99,6 +107,7 @@ yellow = "#f0b72f"
 magenta = "#cb9eff"
 cyan = "#39c5cf"
 white = "#d9dee3"
+green = "#85e89d"
 
 black_bright = "#9ea7b3"
 red_bright = "#ffb1af"
