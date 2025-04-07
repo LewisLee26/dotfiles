@@ -36,5 +36,7 @@ keybinds.apply(config)
 colorscheme.apply(config)
 status.load()
 
+wezterm.plugin.update_all()
+
 -- Return the configuration to wezterm
 return config
