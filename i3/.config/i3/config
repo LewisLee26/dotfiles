@@ -27,8 +27,7 @@ set $wm_color_background             #0A0C10
 
 ### Applications ###
 # Start a terminal emulator
-# bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm
 
 # Start a web browser
 bindsym $mod+$smod+Return exec flatpak run app.zen_browser.zen

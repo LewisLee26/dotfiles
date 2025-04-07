@@ -1,7 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-local keybinds = require("keybinds")
 local colorscheme = require("colorscheme")
 local status = require("status")
 
@@ -12,10 +11,10 @@ config = {
 	term = "xterm-256color",
 	max_fps = 120,
 
-	leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 },
+	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
 	font_size = 12.0,
 	enable_kitty_graphics = true,
-	hide_tab_bar_if_only_one_tab = false,
+	hide_tab_bar_if_only_one_tab = true,
 	use_fancy_tab_bar = false,
 	show_new_tab_button_in_tab_bar = false,
 	status_update_interval = 1000,
@@ -32,9 +31,7 @@ config = {
 	},
 }
 
-keybinds.apply(config)
 colorscheme.apply(config)
-status.load()
 
 wezterm.plugin.update_all()
 
