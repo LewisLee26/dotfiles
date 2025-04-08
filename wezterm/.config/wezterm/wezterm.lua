@@ -32,6 +32,7 @@ config = {
 }
 
 colorscheme.apply(config)
+status.load()
 
 wezterm.plugin.update_all()
 
