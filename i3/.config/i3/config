@@ -40,6 +40,7 @@ bindsym $mod+$smod+d exec rofi -show combi
 exec_always --no-startup-id $wm_setting_app_compositor
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+exec_always --no-startup-id dunst 
 
 exec_always feh --bg-scale ~/.config/backgrounds/dark-5.png
 
