@@ -31,6 +31,8 @@ end
 abbr -a -- cat bat
 abbr -a -- ls eza
 abbr -a -- vi nvim
+abbr -a -- push git push origin main
+abbr -a -- pullr git pull origin main --rebase
 
 bind -M default \cF accept-autosuggestion
 bind -M insert -m default \cF accept-autosuggestion -m insert 
