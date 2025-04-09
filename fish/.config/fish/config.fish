@@ -30,6 +30,10 @@ end
 
 abbr -a -- cat bat
 abbr -a -- ls eza
+abbr -a -- vi nvim
+
+bind -M default \cF accept-autosuggestion
+bind -M insert -m default \cF accept-autosuggestion -m insert 
 
 zoxide init fish | source
 starship init fish | source
