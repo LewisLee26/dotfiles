@@ -36,10 +36,15 @@ abbr -a -- pullr git pull origin main --rebase
 
 bind -M default \cF accept-autosuggestion
 bind -M insert -m default \cF accept-autosuggestion -m insert 
+
 bind -M default \cP history-search-backward
 bind -M default \cN history-search-forward
 bind -M insert -m default \cP history-search-backward -m insert 
 bind -M insert -m default \cN history-search-forward -m insert
+
+bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
+bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
+bind \cc true
 
 zoxide init fish | source
 starship init fish | source
