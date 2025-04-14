@@ -22,8 +22,8 @@ config = {
 	tab_bar_at_bottom = false,
 
 	-- disables mac unicode symbol input via ALT/META
-	send_composed_key_when_left_alt_is_pressed = true,
-	send_composed_key_when_right_alt_is_pressed = true,
+	-- send_composed_key_when_left_alt_is_pressed = true,
+	-- send_composed_key_when_right_alt_is_pressed = true,
 
 	inactive_pane_hsb = {
 		saturation = 0.9,
