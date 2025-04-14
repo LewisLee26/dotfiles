@@ -24,8 +24,8 @@ source $(brew --prefix)/opt/zsh-abbr/share/zsh-abbr/zsh-abbr.zsh
 alias vi=nvim
 alias cat=bat
 abbr --force --quieter ls=eza
-abbr 'push=git push origin main'
-abbr 'pullr=git pull origin main --rebase'
+abbr --quieter 'push=git push origin main'
+abbr --quieter 'pullr=git pull origin main --rebase'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

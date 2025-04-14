@@ -424,6 +424,13 @@ require('lazy').setup({
           flags = lsp_flags,
           settings = {},
         },
+
+        ruff = {
+          capabilities = capabilities,
+          flags = lsp_flags,
+          settings = {},
+        },
+
         marksman = {
           capabilities = capabilities,
           flags = lsp_flags,
