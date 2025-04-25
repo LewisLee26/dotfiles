@@ -20,6 +20,7 @@ config = {
 	status_update_interval = 1000,
 	tab_max_width = 60,
 	tab_bar_at_bottom = false,
+	window_close_confirmation = "NeverPrompt",
 
 	-- disables mac unicode symbol input via ALT/META
 	-- send_composed_key_when_left_alt_is_pressed = true,
