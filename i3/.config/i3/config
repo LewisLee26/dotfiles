@@ -103,10 +103,10 @@ mode "resize" {
 #	Pressing right will grow the window’s width.
 #	Pressing up will shrink the window’s height.
 #	Pressing down will grow the window’s height.
-	bindsym $wm_setting_key_left  resize shrink width 10 px or 10 ppt
+	bindsym $wm_setting_key_left  resize grow width 10 px or 10 ppt
 	bindsym $wm_setting_key_down  resize grow height 10 px or 10 ppt
 	bindsym $wm_setting_key_up    resize shrink height 10 px or 10 ppt
-	bindsym $wm_setting_key_right resize grow width 10 px or 10 ppt
+	bindsym $wm_setting_key_right resize shrink width 10 px or 10 ppt
 
 #	Resize the gap width and height
 	bindsym $smod+$wm_setting_key_left  gaps horizontal minus 5
