@@ -1,0 +1,46 @@
+[user]
+	name = LewisLee26
+	email = lewis.patrick.lee@gmail.com
+
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+
+[advice]
+	addEmptyPathspec = false
+	pushNonFastForward = false
+	statusHints = false
+
+[url "git@github.com:"]
+	insteadOf = "ssh:"
+
+[url "https://github.com/"]
+	insteadOf = "https:"
+
+[url "git@github.com:LewisLee26/"]
+	insteadOf = "ll:"
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[interactive]
+	singlekey = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+
+[pull]
+	default = current
+	rebase = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[branch]
+	sort = -committerdate
