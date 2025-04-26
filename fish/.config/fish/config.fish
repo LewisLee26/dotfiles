@@ -31,8 +31,19 @@ end
 abbr -a -- cat bat
 abbr -a -- ls eza
 abbr -a -- vi nvim
-abbr -a -- push git push origin main
-abbr -a -- pullr git pull origin main --rebase
+
+abbr -a -- gs git status --short
+abbr -a -- gd git diff
+abbr -a -- ga git add 
+abbr -a -- gap git add --patch
+abbr -a -- gc git commit 
+abbr -a -- gp git push
+abbr -a -- gu git pull
+abbr -a -- gl git log --oneline
+abbr -a -- gla git log --all --graph
+abbr -a -- gb git branch
+abbr -a -- gi git init
+abbr -a -- gcl git clone
 
 bind -M default \cF accept-autosuggestion
 bind -M insert -m default \cF accept-autosuggestion -m insert 
