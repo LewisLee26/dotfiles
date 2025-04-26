@@ -44,6 +44,7 @@ abbr -a -- gla git log --all --graph
 abbr -a -- gb git branch
 abbr -a -- gi git init
 abbr -a -- gcl git clone
+abbr -a -- gr git restore 
 
 bind -M default \cF accept-autosuggestion
 bind -M insert -m default \cF accept-autosuggestion -m insert 
