@@ -16,9 +16,6 @@
 [url "git@github.com:"]
 	insteadOf = "ssh:"
 
-[url "https://github.com/"]
-	insteadOf = "https:"
-
 [url "git@github.com:LewisLee26/"]
 	insteadOf = "ll:"
 
