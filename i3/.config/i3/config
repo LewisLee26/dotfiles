@@ -14,7 +14,7 @@ set $wm_setting_key_down             j
 set $wm_setting_key_up               k
 set $wm_setting_key_right            l
 
-set $wm_setting_app_terminal         kitty
+set $wm_setting_app_terminal	     wezterm 
 set $wm_setting_app_browser          firefox
 set $wm_setting_app_launcher         i3-dmenu-desktop
 set $wm_setting_app_compositor       picom
@@ -27,10 +27,10 @@ set $wm_color_background             #0A0C10
 
 ### Applications ###
 # Start a terminal emulator
-bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm
+bindsym $mod+Return exec $wm_setting_app_terminal
 
 # Start a web browser
-bindsym $mod+$smod+Return exec flatpak run app.zen_browser.zen
+bindsym $mod+$smod+Return exec$wm_setting_app_browser 
 
 # Start a program launcher
 bindsym $mod+d exec rofi -show drun 
