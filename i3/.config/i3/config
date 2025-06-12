@@ -15,7 +15,7 @@ set $wm_setting_key_up               k
 set $wm_setting_key_right            l
 
 set $wm_setting_app_terminal	     wezterm 
-set $wm_setting_app_browser          firefox
+set $wm_setting_app_browser          zen 
 set $wm_setting_app_launcher         i3-dmenu-desktop
 set $wm_setting_app_compositor       picom
 
@@ -168,6 +168,8 @@ bindsym $mod+Shift+c reload
 # Change volume
 bindsym $mod+Up exec amixer set Master 5%+
 bindsym $mod+Down exec amixer set Master 5%-
+bindsym $mod+m exec amixer set Master toggle
+bindsym $mod+Shift+m exec amixer set Capture toggle
 
 set $Locker i3lock && sleep 1
 
