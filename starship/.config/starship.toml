@@ -11,6 +11,7 @@ format = """\
 [](fg:blue)\
 $directory\
 $conda\
+$venv\
 [](fg:blue)\
 $fill$cmd_duration\
 $character"""
@@ -63,6 +64,10 @@ style = "white"
 
 [conda]
 format = '[](fg:blue bg:#272b33)[ $environment ](fg:green bg:#272b33)'
+
+[venv]
+format = '[(${version} )(\($virtualenv\) )]($style)'
+style = "fg:green bg:#272b33"
 
 # Customize the battery indicator
 [battery]
