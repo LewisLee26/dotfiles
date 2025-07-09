@@ -48,7 +48,7 @@ local function split_nav(resize_or_move, key)
 end
 
 function M.apply(config)
-	config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 800 }
+	-- config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 800 }
 
 	-- LEADER KEYBINDS
 	config.keys = {
@@ -232,6 +232,16 @@ function M.apply(config)
 			key = "c",
 			mods = "LEADER",
 			action = act.SpawnTab("CurrentPaneDomain"),
+		},
+		{
+			key = "=",
+			mods = "CTRL",
+			action = act.IncreaseFontSize,
+		},
+		{
+			key = "-",
+			mods = "CTRL",
+			action = act.DecreaseFontSize,
 		},
 	}
 	-- Quick tab movement

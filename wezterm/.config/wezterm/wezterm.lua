@@ -1,6 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
+local keybinds = require("keybinds")
 local colorscheme = require("colorscheme")
 local status = require("status")
 
@@ -33,6 +34,7 @@ config = {
 }
 
 colorscheme.apply(config)
+keybinds.apply(config)
 status.load()
 
 wezterm.plugin.update_all()
