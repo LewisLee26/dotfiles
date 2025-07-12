@@ -89,17 +89,17 @@ function M.apply(config)
 			action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		},
 
-		-- Move between split panes
-		split_nav("move", "h"),
-		split_nav("move", "j"),
-		split_nav("move", "k"),
-		split_nav("move", "l"),
-
-		-- Resize panes
-		split_nav("resize", "h"),
-		split_nav("resize", "j"),
-		split_nav("resize", "k"),
-		split_nav("resize", "l"),
+		-- -- Move between split panes
+		-- split_nav("move", "h"),
+		-- split_nav("move", "j"),
+		-- split_nav("move", "k"),
+		-- split_nav("move", "l"),
+		--
+		-- -- Resize panes
+		-- split_nav("resize", "h"),
+		-- split_nav("resize", "j"),
+		-- split_nav("resize", "k"),
+		-- split_nav("resize", "l"),
 		-- Existing keybindings
 		{
 			key = "f",
@@ -141,17 +141,17 @@ function M.apply(config)
 			mods = "LEADER",
 			action = act.SpawnTab("CurrentPaneDomain"),
 		},
-		{
-			key = "h",
-			mods = "ALT",
-			action = act.ActivateTabRelative(-1),
-		},
-
-		{
-			key = "l",
-			mods = "ALT",
-			action = act.ActivateTabRelative(1),
-		},
+		-- {
+		-- 	key = "h",
+		-- 	mods = "ALT",
+		-- 	action = act.ActivateTabRelative(-1),
+		-- },
+		--
+		-- {
+		-- 	key = "l",
+		-- 	mods = "ALT",
+		-- 	action = act.ActivateTabRelative(1),
+		-- },
 
 		-- Rename tab
 		{
