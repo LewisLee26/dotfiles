@@ -235,12 +235,12 @@ function M.apply(config)
 		},
 		{
 			key = "=",
-			mods = "CTRL",
+			mods = "LEADER",
 			action = act.IncreaseFontSize,
 		},
 		{
 			key = "-",
-			mods = "CTRL",
+			mods = "LEADER",
 			action = act.DecreaseFontSize,
 		},
 	}
