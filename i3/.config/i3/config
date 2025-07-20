@@ -192,3 +192,5 @@ bindsym $mod+x mode "$mode_system"
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+$smod+s exec "scrot -e 'xclip -selection clipboard -t image/png -i $f'"
