@@ -15,20 +15,15 @@ if status is-interactive
     fish_vi_key_bindings
 end
 
-# Export CUDA binaries into PATH
-set -x PATH $PATH /usr/local/cuda-12.8/bin
-# Export CUDA libraries into LD_LIBRARY_PATH
-set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/cuda-12.8/lib64
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/peteristaker/anaconda3/bin/conda
-    eval /home/peteristaker/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f /opt/homebrew/anaconda3/bin/conda
+    eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 else
-    if test -f "/home/peteristaker/anaconda3/etc/fish/conf.d/conda.fish"
-        . "/home/peteristaker/anaconda3/etc/fish/conf.d/conda.fish"
+    if test -f "/opt/homebrew/anaconda3/etc/fish/conf.d/conda.fish"
+        . "/opt/homebrew/anaconda3/etc/fish/conf.d/conda.fish"
     else
-        set -x PATH "/home/peteristaker/anaconda3/bin" $PATH
+        set -x PATH "/opt/homebrew/anaconda3/bin" $PATH
     end
 end
 # <<< conda initialize <<<

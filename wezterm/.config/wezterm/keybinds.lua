@@ -233,6 +233,12 @@ function M.apply(config)
 			mods = "LEADER",
 			action = act.SpawnTab("CurrentPaneDomain"),
 		},
+		{
+			{ key = "+", mods = "LEADER", action = wezterm.action.IncreaseFontSize },
+		},
+		{
+			{ key = "-", mods = "LEADER", action = wezterm.action.DecreaseFontSize },
+		},
 	}
 	-- Quick tab movement
 	for i = 1, 9 do

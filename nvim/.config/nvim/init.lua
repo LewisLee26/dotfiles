@@ -428,6 +428,11 @@ require('lazy').setup({
           flags = lsp_flags,
           settings = {},
         },
+        -- ty = {
+        --   capabilities = capabilities,
+        --   flags = lsp_flags,
+        --   settings = {},
+        -- },
 
         zls = {
           capabilities = capabilities,
