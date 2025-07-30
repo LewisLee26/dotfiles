@@ -51,6 +51,8 @@ abbr -a -- gi git init
 abbr -a -- gcl git clone
 abbr -a -- gr git restore 
 
+abbr -a -- gctrl 'XDG_CURRENT_DESKTOP=GNOME gnome-control-center' 
+
 bind -M default \cF accept-autosuggestion
 bind -M insert -m default \cF accept-autosuggestion -m insert 
 
