@@ -19,6 +19,7 @@ end
 set -x PATH $PATH /usr/local/cuda-12.8/bin
 # Export CUDA libraries into LD_LIBRARY_PATH
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/cuda-12.8/lib64
+set -x XDG_CURRENT_DESKTOP GNOME
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -51,7 +52,7 @@ abbr -a -- gi git init
 abbr -a -- gcl git clone
 abbr -a -- gr git restore 
 
-abbr -a -- gctrl 'XDG_CURRENT_DESKTOP=GNOME gnome-control-center' 
+abbr -a -- gctrl 'gnome-control-center' 
 
 bind -M default \cF accept-autosuggestion
 bind -M insert -m default \cF accept-autosuggestion -m insert 
