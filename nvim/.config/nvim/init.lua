@@ -97,6 +97,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- If you open nvim with a directory, start Oil
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function(data)
+    -- Only proceed if nvim was started with a directory
+    if vim.fn.isdirectory(data.file) ~= 1 then
+      return
+    end
+
+    -- Open the directory with oil
+    require('oil').open(data.file)
+
+    -- Try to close the initial empty buffer safely
+    local bufnr = data.buf
+    if vim.api.nvim_buf_is_valid(bufnr) and vim.api.nvim_buf_get_name(bufnr) == '' then
+      vim.api.nvim_buf_delete(bufnr, { force = true })
+    end
+  end,
+})
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
