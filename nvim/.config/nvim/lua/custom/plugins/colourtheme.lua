@@ -8,12 +8,12 @@ return {
   --   },
   -- },
 
-  {
-    'levouh/tint.nvim',
-    tint = -45, -- Darken colors, use a positive value to brighten
-    saturation = 0.6, -- Saturation to preserve
-    tint_background_colors = false, -- Tint background portions of highlight groups
-  },
+  -- {
+  --   'levouh/tint.nvim',
+  --   tint = -45, -- Darken colors, use a positive value to brighten
+  --   saturation = 0.6, -- Saturation to preserve
+  --   tint_background_colors = false, -- Tint background portions of highlight groups
+  -- },
 
   -- {
   --   'sunjon/shade.nvim',
@@ -39,5 +39,15 @@ return {
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
     end,
+  },
+
+  {
+    'rebelot/kanagawa.nvim',
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+  },
+  {
+    'savq/melange-nvim',
   },
 }
