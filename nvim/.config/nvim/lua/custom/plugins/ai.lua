@@ -1,58 +1,40 @@
 return {
   {
     'yetone/avante.nvim',
+    enabled = true,
+    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+    -- ⚠️ must add this setting! ! !
+    build = vim.fn.has 'win32' ~= 0 and 'powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false' or 'make',
     event = 'VeryLazy',
-    enabled = false,
     version = false, -- Never set this value to "*"! Never!
-
+    ---@module 'avante'
+    ---@type avante.Config
     opts = {
-      -- add any opts here
-      -- for example
-      provider = 'openai',
-      vendors = {
-        openai = {
-          endpoint = 'https://api.openai.com/v1',
-          model = 'gpt-4o', -- your desired model (or use gpt-4o, etc.)
-          timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-          temperature = 0,
-          max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-          --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-        },
+      instructions_file = 'avante.md',
+      provider = 'gemini',
+      providers = {
         gemini = {
-          endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
-          model = 'gemini-1.5-flash-latest',
-          timeout = 30000, -- Timeout in milliseconds
-          temperature = 0,
-          max_tokens = 20480,
-        },
-        ollama = {
-          endpoint = 'http://127.0.0.1:11434',
-          model = 'qwen2.5-coder:14b',
-        },
-        deepseek = {
-          __inherited_from = 'openai',
-          api_key_name = 'DEEPSEEK_API_KEY',
-          endpoint = 'https://api.deepseek.com',
-          model = 'deepseek-coder',
+          api_key_name = 'GEMINI_API_KEY',
+          model = 'gemini-2.5-flash',
         },
       },
-      hints = {
+      behaviour = {
+        auto_add_current_file = false,
+      },
+      selection = {
         enabled = false,
+        hint_display = 'delayed',
       },
     },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = 'make',
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'stevearc/dressing.nvim',
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
-      --- The below dependencies are optional,
-      'echasnovski/mini.pick', -- for file_selector provider mini.pick
+      'nvim-mini/mini.pick', -- for file_selector provider mini.pick
       'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
       'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
       'ibhagwan/fzf-lua', -- for file_selector provider fzf
+      'stevearc/dressing.nvim', -- for input provider dressing
+      'folke/snacks.nvim', -- for input provider snacks
       'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
       'zbirenbaum/copilot.lua', -- for providers='copilot'
       {
