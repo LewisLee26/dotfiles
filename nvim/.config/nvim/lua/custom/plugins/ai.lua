@@ -11,15 +11,28 @@ return {
     ---@type avante.Config
     opts = {
       instructions_file = 'avante.md',
-      provider = 'gemini',
+      provider = 'deepseek',
       providers = {
         gemini = {
           api_key_name = 'GEMINI_API_KEY',
           model = 'gemini-2.5-flash',
         },
+        deepseek = {
+          __inherited_from = 'openai',
+          api_key_name = 'DEEPSEEK_API_KEY',
+          endpoint = 'https://api.deepseek.com',
+          -- model = 'deepseek-chat',
+          model = 'deepseek-coder',
+          -- extra = {
+          --   -- temperature = 0.7, -- Controls the randomness of the output. Lower values make it more deterministic.
+          --   -- max_tokens = 512, -- The maximum number of tokens to generate in the completion.
+          --   system_prompt = 'You are a helpful assistant.', -- A system prompt to guide the model's behavior.
+          -- },
+        },
       },
       behaviour = {
         auto_add_current_file = false,
+        auto_approve_tool_permissions = false,
       },
       selection = {
         enabled = false,

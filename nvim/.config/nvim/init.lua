@@ -733,7 +733,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'latex' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'latex', 'gdscript' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -790,6 +790,16 @@ require('lazy').setup({
   },
 })
 
+vim.lsp.config['gdscript'] = {
+  name = 'godot',
+  cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+}
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'gdscript',
+  callback = function()
+    vim.lsp.start(vim.lsp.config['gdscript'])
+  end,
+})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 

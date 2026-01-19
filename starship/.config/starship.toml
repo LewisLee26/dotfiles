@@ -1,4 +1,4 @@
-palette = "github_dark_high_contrast"
+palette = "melange"
 
 # Insert a blank line between shell prompts
 add_newline = true 
@@ -25,8 +25,8 @@ success_symbol = '[❯](white) '
 error_symbol = '[❯](bold red)'
 vimcmd_symbol = '[❮](bold green)'
 vimcmd_visual_symbol = '[❮](bold yellow)'
-vimcmd_replace_symbol = '[❮](bold purple)'
-vimcmd_replace_one_symbol = '[❮](bold purple)'
+vimcmd_replace_symbol = '[❮](bold magenta)'
+vimcmd_replace_one_symbol = '[❮](bold magenta)'
 
 # Disable the line break between the first and second prompt lines
 [line_break]
@@ -36,12 +36,12 @@ disabled = true
 [directory]
 truncate_to_repo = false
 format = "[ $path ]($style)"
-style = "fg:foreground bg:#272b33"
+style = "fg:foreground bg:#292522"
 
 [git_branch]
 symbol = " "
 format = "[ $symbol$branch(:$remote_branch) ]($style)"
-style = "fg:foreground bg:#272b33"
+style = "fg:foreground bg:#292522"
 
 [git_metrics]
 disabled = false
@@ -62,7 +62,7 @@ format = "[ $duration ]($style)"
 style = "white"
 
 [conda]
-format = '[](fg:blue bg:#272b33)[ $environment ](fg:green bg:#272b33)'
+format = '[](fg:blue bg:#292522)[ $environment ](fg:green bg:#292522)'
 
 # Customize the battery indicator
 [battery]
@@ -79,7 +79,7 @@ style = 'red'
 [custom.directory_separator_git]
 description = "Output a styled separator right after the directory when inside a git repository."
 command = ""
-format = "[](fg:blue bg:#272b33)"
+format = "[](fg:blue bg:#292522)"
 # Only when inside git repository
 when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1"
 
@@ -91,34 +91,46 @@ format = "[](fg:blue)"
 # Only when NOT inside a git repository
 when = "! git rev-parse --is-inside-work-tree > /dev/null 2>&1"
 
-[palettes.github_dark_high_contrast]
-foreground = "#f0f3f6"
-background = "#0a0c10"
+[palettes.melange]
+# Base colors
+foreground = "#ECE1D7"
+background = "#161312"
 
-cursor_bg = "#f0f3f6"
-cursor_border = "#f0f3f6"
-cursor_fg = "#0a0c10"
+# UI colors
+cursor_bg = "#ECE1D7"
+cursor_border = "#ECE1D7"
+cursor_fg = "#292522"
+selection_bg = "#403A36"
+selection_fg = "#ECE1D7"
+scrollbar_thumb = "#7B9695"
+split = "#7B9695"
 
-selection_bg = "rgba(64,158,255,0.4)"
-selection_fg = "#f0f3f6"
+# ANSI colors
+black = "#34302C"
+red = "#BD8183"
+green = "#78997A"
+yellow = "#E49B5D"
+blue = "#7F91B2"
+magenta = "#B380B0"
+cyan = "#7B9695"
+white = "#C1A78E"
 
-scrollbar_thumb = "#7a828e"
-split = "#7a828e"
+# Bright ANSI colors
+black_bright = "#867462"
+red_bright = "#D47766"
+green_bright = "#85B695"
+yellow_bright = "#EBC06D"
+blue_bright = "#A3A9CE"
+magenta_bright = "#CF9BC2"
+cyan_bright = "#89B3B6"
+white_bright = "#ECE1D7"
 
-black = "#0a0c10"
-red = "#ff9492"
-blue = "#71b7ff"
-yellow = "#f0b72f"
-magenta = "#cb9eff"
-cyan = "#39c5cf"
-white = "#d9dee3"
-green = "#85e89d"
-
-black_bright = "#9ea7b3"
-red_bright = "#ffb1af"
-green_bright = "#f0f3f6"
-yellow_bright = "#f7c843"
-blue_bright = "#91cbff"
-magenta_bright = "#dbb7ff"
-cyan_bright = "#ffb1af"
-white_bright = "#ffffff"
+# Additional melange colors (optional, for reference)
+dark_black = "#292522"
+dark_blue = "#273142"
+dark_cyan = "#253333"
+dark_green = "#233524"
+dark_magenta = "#422741"
+dark_red = "#7D2A2F"
+dark_white = "#403A36"
+dark_yellow = "#8B7449"

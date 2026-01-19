@@ -1,3 +1,5 @@
+fish_config theme choose melange
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     # Disable welcome message
@@ -23,13 +25,13 @@ set -x XDG_CURRENT_DESKTOP GNOME
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/peteristaker/anaconda3/bin/conda
-    eval /home/peteristaker/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f ~/miniforge3/bin/mamba
+    eval ~/miniforge3/bin/mamba "shell" "hook" $argv | source
 else
-    if test -f "/home/peteristaker/anaconda3/etc/fish/conf.d/conda.fish"
-        . "/home/peteristaker/anaconda3/etc/fish/conf.d/conda.fish"
+    if test -f "~/miniforge3/etc/fish/conf.d/mamba.fish"
+        . "~/miniforge3/etc/fish/conf.d/mamba.fish"
     else
-        set -x PATH "/home/peteristaker/anaconda3/bin" $PATH
+        set -x PATH "~/miniforge3/bin" $PATH
     end
 end
 # <<< conda initialize <<<
@@ -37,6 +39,8 @@ end
 abbr -a -- cat bat
 abbr -a -- ls eza
 abbr -a -- vi nvim
+
+abbr -a -- mamba micromamba 
 
 abbr -a -- gs git status --short
 abbr -a -- gd git diff
@@ -68,3 +72,5 @@ bind \cc true
 
 zoxide init fish | source
 starship init fish | source
+
+fish_add_path /home/peteristaker/.pixi/bin

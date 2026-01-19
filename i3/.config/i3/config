@@ -19,11 +19,31 @@ set $wm_setting_app_browser          zen
 set $wm_setting_app_launcher         i3-dmenu-desktop
 set $wm_setting_app_compositor       picom
 
-set $wm_color_border_active_bg       #81A1C1
-set $wm_color_border_active_fg       #3B4252
-set $wm_color_border_inactive_bg     #3B4252
-set $wm_color_border_inactive_fg     #D8DEE9
-set $wm_color_background             #0A0C10
+# Border colors for focused and unfocused windows
+set $wm_color_border_active_bg       #C1A78E
+set $wm_color_border_active_fg       #34302C
+set $wm_color_border_inactive_bg     #34302C
+set $wm_color_border_inactive_fg     #867462
+set $wm_color_background             #161312
+
+# Title bar colors
+set $wm_color_titlebar_active_bg     #7F91B2
+set $wm_color_titlebar_active_fg     #34302C
+set $wm_color_titlebar_inactive_bg   #34302C
+set $wm_color_titlebar_inactive_fg   #867462
+
+# Status/indicator colors
+set $wm_color_indicator_focused      #E49B5D
+set $wm_color_indicator_unfocused    #7B9695
+set $wm_color_indicator_urgent       #BD8183
+
+# Workspace colors
+set $wm_color_workspace_focused_bg   #7F91B2
+set $wm_color_workspace_focused_fg   #34302C
+set $wm_color_workspace_unfocused_bg #34302C
+set $wm_color_workspace_unfocused_fg #867462
+set $wm_color_workspace_urgent_bg    #BD8183
+set $wm_color_workspace_urgent_fg    #34302C
 
 ### Applications ###
 # Start a terminal emulator
@@ -42,7 +62,7 @@ exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always --no-startup-id dunst 
 
-exec_always feh --bg-scale ~/.config/backgrounds/dark-5.png
+exec_always feh --bg-scale ~/.config/backgrounds/dark-11.png
 
 ### Workspaces ###
 # Define names for default workspaces for which we configure key bindings later on.
@@ -103,16 +123,16 @@ mode "resize" {
 #	Pressing right will grow the window’s width.
 #	Pressing up will shrink the window’s height.
 #	Pressing down will grow the window’s height.
-	bindsym $wm_setting_key_left  resize grow width 10 px or 10 ppt
-	bindsym $wm_setting_key_down  resize grow height 10 px or 10 ppt
-	bindsym $wm_setting_key_up    resize shrink height 10 px or 10 ppt
-	bindsym $wm_setting_key_right resize shrink width 10 px or 10 ppt
+	bindsym $wm_setting_key_left  resize grow width 5 px or 5 ppt
+	bindsym $wm_setting_key_down  resize grow height 5 px or 5 ppt
+	bindsym $wm_setting_key_up    resize shrink height 5 px or 5 ppt
+	bindsym $wm_setting_key_right resize shrink width 5 px or 5 ppt
 
 #	Resize the gap width and height
-	bindsym $smod+$wm_setting_key_left  gaps horizontal minus 5
-	bindsym $smod+$wm_setting_key_down  gaps horizontal plus 5
-	bindsym $smod+$wm_setting_key_up    gaps vertical minus 5
-	bindsym $smod+$wm_setting_key_right gaps vertical plus 5
+	bindsym $smod+$wm_setting_key_left  resize grow width 10 px or 10 ppt
+	bindsym $smod+$wm_setting_key_down  resize grow height 10 px or 10 ppt
+	bindsym $smod+$wm_setting_key_up    resize shrink height 10 px or 10 ppt
+	bindsym $smod+$wm_setting_key_right resize shrink width 10 px or 10 ppt
 
 #	Back to normal: Enter or Escape or $mod+r
 	bindsym Return mode "default"

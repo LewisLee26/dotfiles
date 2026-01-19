@@ -5,38 +5,37 @@ local M = {}
 function M.apply(config)
 	-- Colorscheme
 	config.colors = {
-		foreground = "#f0f3f6", -- fg.default
-		background = "#0a0c10", -- canvas.default
+		foreground = "#ECE1D7",
+		-- background = "#292522",
+		background = "#161312",
 
-		cursor_bg = "#f0f3f6", -- fg.default
-		cursor_border = "#f0f3f6", -- fg.default
-		cursor_fg = "#0a0c10", -- canvas.default
+		cursor_bg = "#ECE1D7",
+		cursor_border = "#ECE1D7",
+		cursor_fg = "#292522",
 
-		selection_bg = "rgba(64,158,255,0.4)", -- selectionBg
-		selection_fg = "#f0f3f6", -- fg.default
-
-		scrollbar_thumb = "#7a828e", -- border.default
-		split = "#7a828e", -- border.default
+		selection_bg = "#403A36",
+		selection_fg = "#ECE1D7",
 
 		ansi = {
-			"#0a0c10", -- black
-			"#ff9492", -- red
-			"#71b7ff", -- blue (originaly green "#26cd4d")
-			"#f0b72f", -- yellow
-			"#0a0c10", -- black (originaly blue "#71b7ff")
-			"#cb9eff", -- magenta
-			"#39c5cf", -- cyan
-			"#d9dee3", -- white
+			"#34302C", -- black
+			"#BD8183", -- red
+			"#78997A", -- green
+			"#E49B5D", -- yellow
+			"#7F91B2", -- blue
+			"#B380B0", -- magenta
+			"#7B9695", -- cyan
+			"#C1A78E", -- white
 		},
+
 		brights = {
-			"#9ea7b3", -- blackBright
-			"#ffb1af", -- redBright
-			"#f0f3f6", -- white (originaly greenBright "#4ae168")
-			"#f7c843", -- yellowBright
-			"#91cbff", -- blueBright
-			"#dbb7ff", -- magentaBright
-			"#ffb1af", -- cyanBright
-			"#ffffff", -- whiteBright
+			"#867462", -- blackBright
+			"#D47766", -- redBright
+			"#85B695", -- greenBright
+			"#EBC06D", -- yellowBright
+			"#A3A9CE", -- blueBright
+			"#CF9BC2", -- magentaBright
+			"#89B3B6", -- cyanBright
+			"#ECE1D7", -- whiteBright
 		},
 	}
 end

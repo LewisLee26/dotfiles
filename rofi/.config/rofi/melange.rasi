@@ -1,0 +1,131 @@
+* {
+    /* Base colors */
+    bg-col:  #161312;
+    bg-col-dark: #292522;
+    border-col: #34302C;
+    selected-col: #292522;
+    
+    /* Theme colors */
+    blue: #7F91B2;
+    blue-bright: #A3A9CE;
+    red: #BD8183;
+    red-bright: #D47766;
+    green: #78997A;
+    green-bright: #85B695;
+    yellow: #E49B5D;
+    yellow-bright: #EBC06D;
+    magenta: #B380B0;
+    magenta-bright: #CF9BC2;
+    cyan: #7B9695;
+    cyan-bright: #89B3B6;
+    
+    /* Text colors */
+    fg-col: #ECE1D7;
+    fg-col2: #A3A9CE;
+    grey: #867462;
+    
+    /* Layout */
+    width: 600;
+    font: "JetBrainsMono Nerd Font 13";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: @bg-col;
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+
+window {
+    height: 360px;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @yellow;  /* Changed from @blue to @yellow */
+    padding: 6px;
+    text-color: @bg-col-dark;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @blue ;
+    text-color: @bg-col-dark;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @bg-col-dark;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+element selected {
+    background-color:  @yellow ;
+    text-color: @bg-col-dark;
+}
+
+message {
+    background-color: @bg-col-dark;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @yellow;  /* Changed from @blue to @yellow */
+    background-color: @bg-col-dark;
+}
