@@ -1,3 +1,4 @@
 tmux/.config/tmux/plugins/*
 !tmux/.config/tmux/plugins/.gitkeep
 fish/.config/fish/fish_variables
+backgrounds/
