@@ -40,13 +40,14 @@ abbr -a -- cat bat
 abbr -a -- ls eza
 abbr -a -- vi nvim
 
-abbr -a -- mamba micromamba 
+abbr -a -- mm micromamba
+abbr -a -- uu "sudo apt update && sudo apt upgrade -y"
 
 abbr -a -- gs git status --short
 abbr -a -- gd git diff
-abbr -a -- ga git add 
+abbr -a -- ga git add
 abbr -a -- gap git add --patch
-abbr -a -- gc git commit 
+abbr -a -- gc git commit
 abbr -a -- gp git push
 abbr -a -- gu git pull
 abbr -a -- gl git log --oneline
@@ -54,16 +55,16 @@ abbr -a -- gla git log --all --graph
 abbr -a -- gb git branch
 abbr -a -- gi git init
 abbr -a -- gcl git clone
-abbr -a -- gr git restore 
+abbr -a -- gr git restore
 
-abbr -a -- gctrl 'gnome-control-center' 
+abbr -a -- gctrl 'gnome-control-center'
 
 bind -M default \cF accept-autosuggestion
-bind -M insert -m default \cF accept-autosuggestion -m insert 
+bind -M insert -m default \cF accept-autosuggestion -m insert
 
 bind -M default \cP history-search-backward
 bind -M default \cN history-search-forward
-bind -M insert -m default \cP history-search-backward -m insert 
+bind -M insert -m default \cP history-search-backward -m insert
 bind -M insert -m default \cN history-search-forward -m insert
 
 bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
