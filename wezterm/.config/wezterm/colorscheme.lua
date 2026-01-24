@@ -6,8 +6,7 @@ function M.apply(config)
 	-- Colorscheme
 	config.colors = {
 		foreground = "#ECE1D7",
-		-- background = "#292522",
-		background = "#161312",
+		background = "#0D0B0B",
 
 		cursor_bg = "#ECE1D7",
 		cursor_border = "#ECE1D7",

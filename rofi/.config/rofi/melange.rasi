@@ -1,7 +1,7 @@
 * {
     /* Base colors */
-    bg-col:  #161312;
-    bg-col-dark: #292522;
+    bg-col:  #0D0B0B;
+    bg-col-dark: #0D0B0B;
     border-col: #34302C;
     selected-col: #292522;
     

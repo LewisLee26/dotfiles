@@ -182,19 +182,19 @@ context = ctrl+shift+period
 # Otherwise the "#" and following would be interpreted as a comment.
 frame_color = "#7F91B2"
 foreground = "#7F91B2"
-background = "#292522"
+background = "#0D0B0B"
 timeout = 4
 
 [urgency_normal]
 frame_color = "#E49B5D"
 foreground = "#E49B5D"
-background = "#292522"
+background = "#0D0B0B"
 timeout = 6
 
 [urgency_critical]
 frame_color = "#ECE1D7"
 foreground = "#ECE1D7"
-background = "#292522"
+background = "#0D0B0B"
 timeout = 8
 
 # Every section that isn't one of the above is interpreted as a rules to
