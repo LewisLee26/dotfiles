@@ -1,0 +1,171 @@
+font-family = JetBrainsMono
+
+font-family-italic = Operator Mono Book
+font-family-bold-italic = Operator Mono
+
+font-style = default
+
+font-style-bold = default
+font-style-italic = default
+font-style-bold-italic = default
+font-synthetic-style = bold,italic,bold-italic
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+font-size = 12
+font-variation =
+
+font-variation-bold =
+font-variation-italic =
+font-variation-bold-italic =
+font-codepoint-map =
+adjust-cell-width =
+
+adjust-cell-height =
+adjust-font-baseline =
+adjust-underline-position =
+adjust-underline-thickness =
+adjust-strikethrough-position =
+adjust-strikethrough-thickness =
+adjust-cursor-thickness =
+grapheme-width-method = unicode
+
+# Colors converted from Melange scheme
+background = 0D0B0B
+foreground = ECE1D7
+cursor-color = ECE1D7
+selection-background = 403A36
+selection-foreground = ECE1D7
+
+palette = 0=#34302C
+palette = 1=#BD8183
+palette = 2=#78997A
+palette = 3=#E49B5D
+palette = 4=#7F91B2
+palette = 5=#B380B0
+palette = 6=#7B9695
+palette = 7=#C1A78E
+palette = 8=#867462
+palette = 9=#D47766
+palette = 10=#85B695
+palette = 11=#EBC06D
+palette = 12=#A3A9CE
+palette = 13=#CF9BC2
+palette = 14=#89B3B6
+palette = 15=#ECE1D7
+
+selection-invert-fg-bg = false
+minimum-contrast = 1
+
+cursor-color =
+cursor-invert-fg-bg = false
+cursor-opacity = 1
+cursor-style = bar
+cursor-style-blink =
+cursor-text =
+cursor-click-to-move = true
+
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+mouse-scroll-multiplier = 1
+
+background-opacity = 1
+
+unfocused-split-opacity = 0.7
+
+unfocused-split-fill =
+
+command =
+wait-after-command = false
+
+abnormal-command-exit-runtime = 250
+
+scrollback-limit = 10000000
+
+link-url = true
+
+fullscreen = false
+
+title =
+
+class =
+
+x11-instance-name =
+
+working-directory =
+
+
+# This is for reducing cpu usage
+async-backend = epoll
+
+keybind=clear
+
+keybind = ctrl+shift+comma=reload_config
+
+keybind = ctrl+equal=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+0=reset_font_size
+
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+c=copy_to_clipboard
+
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = extend
+window-vsync = true
+window-inherit-working-directory = true
+window-inherit-font-size = true
+window-decoration = false
+window-colorspace = srgb
+window-step-resize = false
+window-new-tab-position = current
+
+resize-overlay = after-first
+resize-overlay-position = center
+resize-overlay-duration = 750ms
+
+focus-follows-mouse = false
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
+
+image-storage-limit = 320000000
+copy-on-select = false
+click-repeat-interval = 0
+config-file =
+config-default-files = true
+
+confirm-close-surface = false
+quit-after-last-window-closed = true
+quit-after-last-window-closed-delay =
+
+initial-window = true
+
+shell-integration = fish 
+shell-integration-features = no-sudo,title
+
+osc-color-report-format = 16-bit
+vt-kam-allowed = false
+custom-shader =
+macos-option-as-alt = false
+
+linux-cgroup-memory-limit =
+linux-cgroup-processes-limit =
+linux-cgroup-hard-fail = false
+
+gtk-single-instance = true
+gtk-titlebar = false
+gtk-tabs-location = top
+gtk-wide-tabs = true
+# gtk-adwaita = true
+
+desktop-notifications = true
+
+bold-is-bright = false
+
+term = xterm-ghostty
