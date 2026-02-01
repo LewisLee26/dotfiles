@@ -132,6 +132,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.g.python3_host_prog = vim.fn.expand '~/miniforge3/envs/neovim/bin/python3'
+
 -- [[ Configure and install plugins ]]
 
 -- NOTE: Here is where you install your plugins.

@@ -1,35 +1,26 @@
 return {
   {
     'GCBallesteros/jupytext.nvim',
-    enabled = false,
-    config = function()
-      require('jupytext').setup {
-        custom_language_formatting = {
-          python = {
-            extension = 'md',
-            style = 'markdown',
-            force_ft = 'markdown',
-          },
-        },
-      }
-    end,
-    lazy = false,
+    -- ft = { "ipynb" },
+    opts = {
+      style = 'markdown',
+      output_extension = 'md',
+      force_ft = 'markdown',
+    },
   },
-
+  { 'jmbuhr/otter.nvim', ft = { 'markdown', 'quarto', 'norg' } },
   {
     'quarto-dev/quarto-nvim',
-    enabled = false,
-    ft = { 'quarto', 'markdown' },
     dependencies = {
-      'nvim-cmp',
       'nvim-lspconfig',
       'otter.nvim',
     },
+    ft = { 'quarto', 'markdown', 'norg' },
     config = function()
       local quarto = require 'quarto'
       quarto.setup {
         lspFeatures = {
-          languages = { 'python' },
+          languages = { 'python', 'rust', 'lua' },
           chunks = 'all', -- 'curly' or 'all'
           diagnostics = {
             enabled = true,
@@ -55,57 +46,10 @@ return {
         },
       }
 
-      -- local runner = require 'quarto.runner'
-      --
-      -- -- Set up key mappings for quarto.runner
-      -- vim.keymap.set('n', '<leader>rc', runner.run_cell, { desc = 'run cell', silent = true })
-      -- vim.keymap.set('n', '<leader>ra', runner.run_above, { desc = 'run cell and above', silent = true })
-      -- vim.keymap.set('n', '<leader>rA', runner.run_all, { desc = 'run all cells', silent = true })
-      -- -- vim.keymap.set("n", "<leader>rl", runner.run_line, { desc = "run line", silent = true })
-      -- vim.keymap.set('v', '<leader>r', runner.run_range, { desc = 'run visual range', silent = true })
-      -- vim.keymap.set('n', '<leader>RA', function()
-      --   runner.run_all(true)
-      -- end, { desc = 'run all cells of all languages', silent = true })
-
       vim.keymap.set('n', '<localleader>qp', quarto.quartoPreview, { desc = 'Preview the Quarto document', silent = true, noremap = true })
       -- to create a cell in insert mode, I have the ` snippet
       vim.keymap.set('n', '<localleader>cc', 'i`<c-j>', { desc = 'Create a new code cell', silent = true })
       vim.keymap.set('n', '<localleader>cs', 'i```\r\r```{}<left>', { desc = 'Split code cell', silent = true, noremap = true })
     end,
-    lazy = false,
-  },
-
-  {
-    'jpalardy/vim-slime',
-    enabled = false,
-    init = function()
-      -- these two should be set before the plugin loads
-      vim.g.slime_target = 'neovim'
-      vim.g.slime_no_mappings = true
-    end,
-    config = function()
-      vim.g.slime_input_pid = false
-      vim.g.slime_suggest_default = true
-      vim.g.slime_menu_config = false
-      vim.g.slime_neovim_ignore_unlisted = false
-      -- options not set here are g:slime_neovim_menu_order, g:slime_neovim_menu_delimiter, and g:slime_get_jobid
-      -- see the documentation above to learn about those options
-
-      -- called MotionSend but works with textobjects as well
-      vim.keymap.set('n', 'gz', '<Plug>SlimeMotionSend', { remap = true, silent = false })
-      vim.keymap.set('n', 'gzz', '<Plug>SlimeLineSend', { remap = true, silent = false })
-      vim.keymap.set('x', 'gz', '<Plug>SlimeRegionSend', { remap = true, silent = false })
-      vim.keymap.set('n', 'gzc', '<Plug>SlimeConfig', { remap = true, silent = false })
-    end,
-  },
-
-  {
-    'jmbuhr/otter.nvim',
-    enabled = false,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-    ft = { 'markdown', 'quarto', 'norg' },
-    opts = {},
   },
 }
