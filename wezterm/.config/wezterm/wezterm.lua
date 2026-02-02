@@ -16,6 +16,7 @@ config = {
 	font_size = 12.0,
 	enable_kitty_graphics = true,
 	hide_tab_bar_if_only_one_tab = true,
+	window_decorations = "NONE",
 	use_fancy_tab_bar = false,
 	show_new_tab_button_in_tab_bar = false,
 	status_update_interval = 1000,
